@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Cosmic dark theme with vibrant gradients */
+    --background: 250 60% 5%;
+    --foreground: 240 10% 95%;
+
+    --card: 250 50% 8%;
+    --card-foreground: 240 10% 95%;
+
+    --popover: 250 50% 8%;
+    --popover-foreground: 240 10% 95%;
+
+    --primary: 270 80% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 195 100% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 250 40% 15%;
+    --muted-foreground: 240 10% 60%;
+
+    --accent: 280 90% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 250 40% 20%;
+    --input: 250 40% 15%;
+    --ring: 270 80% 60%;
+
+    --radius: 1rem;
+
+    /* Custom gradient tokens */
+    --gradient-cosmic: linear-gradient(135deg, hsl(270 80% 60%) 0%, hsl(240 70% 50%) 50%, hsl(195 100% 50%) 100%);
+    --gradient-glow: linear-gradient(135deg, hsl(280 90% 65% / 0.3) 0%, hsl(195 100% 50% / 0.3) 100%);
+    
+    /* Glass effect */
+    --glass-bg: hsl(250 50% 8% / 0.4);
+    --glass-border: hsl(240 30% 30% / 0.3);
+    
+    /* Glow effects */
+    --glow-primary: 0 0 20px hsl(270 80% 60% / 0.5), 0 0 40px hsl(270 80% 60% / 0.3);
+    --glow-secondary: 0 0 20px hsl(195 100% 50% / 0.5), 0 0 40px hsl(195 100% 50% / 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground overflow-x-hidden;
+    background: linear-gradient(135deg, hsl(250 60% 5%) 0%, hsl(260 50% 8%) 50%, hsl(240 60% 6%) 100%);
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+  }
+  
+  .glow-text {
+    text-shadow: var(--glow-primary);
+  }
+  
+  .glow-border {
+    box-shadow: var(--glow-primary);
+  }
+  
+  .gradient-text {
+    background: var(--gradient-cosmic);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
