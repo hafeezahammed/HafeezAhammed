@@ -20,29 +20,36 @@ const About = () => {
   };
 
   return (
-    <section id="about" className="py-20 px-4 relative overflow-hidden">
+    <section id="about" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <div className="container mx-auto max-w-6xl">
+        {/* Header Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
+          className="mb-8 sm:mb-12"
         >
-          <h2 className="text-4xl md:text-6xl font-bold mb-12 text-center gradient-text">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center gradient-text mb-4">
             About Me
           </h2>
+          <p className="text-center text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto">
+            Passionate developer creating innovative solutions and exploring technology
+          </p>
         </motion.div>
 
+        {/* Content Grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-2 gap-8"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8"
         >
-          <motion.div variants={itemVariants}>
-            <Card className="glass-card p-8 hover:glow-border transition-all duration-300 group">
-              <div className="w-full h-64 rounded-lg mb-6 flex items-center justify-center overflow-hidden bg-transparent">
+          {/* Profile Card */}
+          <motion.div variants={itemVariants} className="flex flex-col">
+            <Card className="glass-card p-4 sm:p-6 md:p-8 hover:glow-border transition-all duration-300 group flex-1">
+              <div className="w-full h-48 sm:h-56 md:h-64 rounded-lg mb-4 sm:mb-6 flex items-center justify-center overflow-hidden bg-transparent">
                 <motion.div
                   className="w-full h-full flex items-center justify-center"
                   whileHover={{ scale: 1.05 }}
@@ -55,45 +62,57 @@ const About = () => {
                   />
                 </motion.div>
               </div>
-              <h3 className="text-2xl font-bold mb-4 gradient-text">Hafeez Ahammed</h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 gradient-text text-center sm:text-left">
+                Hafeez Ahammed
+              </h3>
+              <p className="text-muted-foreground leading-relaxed text-sm sm:text-base text-center sm:text-left">
                 Passionate about creating innovative solutions and exploring the endless possibilities of technology.
                 Member of the Coders Club, constantly learning and building.
               </p>
             </Card>
           </motion.div>
 
-          <motion.div variants={itemVariants} className="space-y-6">
-            <Card className="glass-card p-6 hover:glow-border transition-all duration-300">
-              <div className="flex items-start gap-4">
-                <Calendar className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
-                <div>
-                  <h4 className="font-semibold mb-1">Date of Birth</h4>
-                  <p className="text-muted-foreground">November 6, 2005</p>
+          {/* Info Cards */}
+          <motion.div variants={itemVariants} className="space-y-4 sm:space-y-6">
+            {/* Date of Birth */}
+            <Card className="glass-card p-4 sm:p-6 hover:glow-border transition-all duration-300">
+              <div className="flex items-start gap-3 sm:gap-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full glass-card flex items-center justify-center flex-shrink-0">
+                  <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h4 className="font-semibold text-sm sm:text-base mb-1 truncate">Date of Birth</h4>
+                  <p className="text-muted-foreground text-sm sm:text-base">November 6, 2005</p>
                 </div>
               </div>
             </Card>
 
-            <Card className="glass-card p-6 hover:glow-border transition-all duration-300">
-              <div className="flex items-start gap-4">
-                <MapPin className="w-6 h-6 text-secondary mt-1 flex-shrink-0" />
-                <div>
-                  <h4 className="font-semibold mb-1">Location</h4>
-                  <p className="text-muted-foreground">
+            {/* Location */}
+            <Card className="glass-card p-4 sm:p-6 hover:glow-border transition-all duration-300">
+              <div className="flex items-start gap-3 sm:gap-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full glass-card flex items-center justify-center flex-shrink-0">
+                  <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-secondary" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h4 className="font-semibold text-sm sm:text-base mb-1 truncate">Location</h4>
+                  <p className="text-muted-foreground text-sm sm:text-base break-words">
                     Shivamogga District, Bhadravathi Taluk
                   </p>
                 </div>
               </div>
             </Card>
 
-            <Card className="glass-card p-6 hover:glow-border transition-all duration-300">
-              <div className="flex items-start gap-4">
-                <Mail className="w-6 h-6 text-accent mt-1 flex-shrink-0" />
-                <div>
-                  <h4 className="font-semibold mb-1">Email</h4>
+            {/* Email */}
+            <Card className="glass-card p-4 sm:p-6 hover:glow-border transition-all duration-300">
+              <div className="flex items-start gap-3 sm:gap-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full glass-card flex items-center justify-center flex-shrink-0">
+                  <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-accent" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h4 className="font-semibold text-sm sm:text-base mb-1 truncate">Email</h4>
                   <a
                     href="mailto:hafeezahammed264@gmail.com"
-                    className="text-muted-foreground hover:text-primary transition-colors"
+                    className="text-muted-foreground hover:text-primary transition-colors text-sm sm:text-base break-all"
                   >
                     hafeezahammed264@gmail.com
                   </a>
@@ -101,56 +120,60 @@ const About = () => {
               </div>
             </Card>
 
+            {/* Coders Club */}
             <a
               href="https://thecodersclub.netlify.app/"
               target="_blank"
               rel="noopener noreferrer"
               className="block"
             >
-              <Card className="glass-card p-6 hover:glow-border transition-all duration-300 cursor-pointer">
-              <div className="flex items-start gap-4">
-                <Code className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
-                <div>
-                <h4 className="font-semibold mb-1">Member of</h4>
-                <div className="flex items-center gap-2">
-                  <span className="text-2xl font-mono gradient-text">&lt;/&gt;</span>
-                  <span className="text-muted-foreground">Coders Club</span>
+              <Card className="glass-card p-4 sm:p-6 hover:glow-border transition-all duration-300 cursor-pointer">
+                <div className="flex items-start gap-3 sm:gap-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full glass-card flex items-center justify-center flex-shrink-0">
+                    <Code className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h4 className="font-semibold text-sm sm:text-base mb-1">Member of</h4>
+                    <div className="flex items-center gap-2">
+                      <span className="text-xl sm:text-2xl font-mono gradient-text">&lt;/&gt;</span>
+                      <span className="text-muted-foreground text-sm sm:text-base">Coders Club</span>
+                    </div>
+                  </div>
                 </div>
-                </div>
-              </div>
               </Card>
             </a>
 
-            <div className="flex gap-4 pt-4">
+            {/* Social Buttons */}
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4">
               <Button
                 size="lg"
                 variant="outline"
-                className="glass-card flex-1 hover:glow-border transition-all duration-300"
+                className="glass-card flex-1 hover:glow-border transition-all duration-300 py-3 sm:py-4"
                 asChild
               >
                 <a
                   href="https://www.instagram.com/hafeez_7724?igsh=dGdlc3gzZTh6NHA0"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2"
+                  className="flex items-center justify-center gap-2 text-sm sm:text-base"
                 >
-                  <Instagram className="w-5 h-5" />
+                  <Instagram className="w-4 h-4 sm:w-5 sm:h-5" />
                   Instagram
                 </a>
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="glass-card flex-1 hover:glow-border transition-all duration-300"
+                className="glass-card flex-1 hover:glow-border transition-all duration-300 py-3 sm:py-4"
                 asChild
               >
                 <a
                   href="https://www.linkedin.com/in/hafeez-ahammed-798a87379/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2"
+                  className="flex items-center justify-center gap-2 text-sm sm:text-base"
                 >
-                  <Linkedin className="w-5 h-5" />
+                  <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" />
                   LinkedIn
                 </a>
               </Button>
