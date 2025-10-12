@@ -20,7 +20,10 @@ const About = () => {
   };
 
   return (
-    <section id="about" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section
+      id="about"
+      className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
+    >
       <div className="container mx-auto max-w-6xl">
         {/* Header Section */}
         <motion.div
@@ -49,19 +52,19 @@ const About = () => {
           {/* Profile Card */}
           <motion.div variants={itemVariants} className="flex flex-col">
             <Card className="glass-card p-4 sm:p-6 md:p-8 hover:glow-border transition-all duration-300 group flex-1">
-              <div className="w-full h-48 sm:h-56 md:h-64 rounded-lg mb-4 sm:mb-6 flex items-center justify-center overflow-hidden bg-transparent">
-                <motion.div
-                  className="w-full h-full flex items-center justify-center"
+              {/* Responsive Image Wrapper */}
+              <div className="relative w-full aspect-[4/3] rounded-3xl sm:rounded-[2rem] lg:rounded-[2.5rem] overflow-hidden mb-4 sm:mb-6">
+                <motion.img
+                  src="/assets/hafeez.png"
+                  alt="Hafeez Ahammed"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  // objectPosition moves the image downward so the top (hair) is visible.
+                  style={{ objectPosition: "50% 20%" }}
                   whileHover={{ scale: 1.05 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <img 
-                    src="/assets/hafeez.png" 
-                    alt="Hafeez Ahammed"
-                    className="w-full h-full object-contain rounded-lg"
-                  />
-                </motion.div>
+                  transition={{ type: "spring", stiffness: 200 }}
+                />
               </div>
+
               <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 gradient-text text-center sm:text-left">
                 Hafeez Ahammed
               </h3>
@@ -81,8 +84,12 @@ const About = () => {
                   <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h4 className="font-semibold text-sm sm:text-base mb-1 truncate">Date of Birth</h4>
-                  <p className="text-muted-foreground text-sm sm:text-base">November 6, 2005</p>
+                  <h4 className="font-semibold text-sm sm:text-base mb-1 truncate">
+                    Date of Birth
+                  </h4>
+                  <p className="text-muted-foreground text-sm sm:text-base">
+                    November 6, 2005
+                  </p>
                 </div>
               </div>
             </Card>
@@ -94,7 +101,9 @@ const About = () => {
                   <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-secondary" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h4 className="font-semibold text-sm sm:text-base mb-1 truncate">Location</h4>
+                  <h4 className="font-semibold text-sm sm:text-base mb-1 truncate">
+                    Location
+                  </h4>
                   <p className="text-muted-foreground text-sm sm:text-base break-words">
                     Shivamogga District, Bhadravathi Taluk
                   </p>
@@ -109,7 +118,9 @@ const About = () => {
                   <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-accent" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h4 className="font-semibold text-sm sm:text-base mb-1 truncate">Email</h4>
+                  <h4 className="font-semibold text-sm sm:text-base mb-1 truncate">
+                    Email
+                  </h4>
                   <a
                     href="mailto:hafeezahammed264@gmail.com"
                     className="text-muted-foreground hover:text-primary transition-colors text-sm sm:text-base break-all"
@@ -133,10 +144,16 @@ const About = () => {
                     <Code className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h4 className="font-semibold text-sm sm:text-base mb-1">Member of</h4>
+                    <h4 className="font-semibold text-sm sm:text-base mb-1">
+                      Member of
+                    </h4>
                     <div className="flex items-center gap-2">
-                      <span className="text-xl sm:text-2xl font-mono gradient-text">&lt;/&gt;</span>
-                      <span className="text-muted-foreground text-sm sm:text-base">Coders Club</span>
+                      <span className="text-xl sm:text-2xl font-mono gradient-text">
+                        &lt;/&gt;
+                      </span>
+                      <span className="text-muted-foreground text-sm sm:text-base">
+                        Coders Club
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -145,6 +162,7 @@ const About = () => {
 
             {/* Social Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4">
+              {/* Instagram */}
               <Button
                 size="lg"
                 variant="outline"
@@ -161,10 +179,12 @@ const About = () => {
                   Instagram
                 </a>
               </Button>
+
+              {/* LinkedIn - updated */}
               <Button
                 size="lg"
                 variant="outline"
-                className="glass-card flex-1 hover:glow-border transition-all duration-300 py-3 sm:py-4"
+                className="glass-card flex-1 hover:bg-blue-500 hover:text-white active:bg-blue-600 active:text-white hover:glow-border transition-all duration-300 py-3 sm:py-4"
                 asChild
               >
                 <a
@@ -173,7 +193,7 @@ const About = () => {
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 text-sm sm:text-base"
                 >
-                  <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" />
+                  <Linkedin className="w-4 h-4 sm:w-5 sm:h-5 transition-colors group-hover:text-white" />
                   LinkedIn
                 </a>
               </Button>
