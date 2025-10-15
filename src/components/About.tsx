@@ -152,7 +152,7 @@ const About = () => {
                         &lt;/&gt;
                       </span>
                       <span className="text-muted-foreground text-sm sm:text-base">
-                        Coders Club
+                        #2Code
                       </span>
                     </div>
                   </div>
