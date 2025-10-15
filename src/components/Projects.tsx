@@ -17,7 +17,7 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: "SMVGSC Library",
+      title: "Library",
       subtitle: "Management System",
       description: "College library management system for efficient book tracking and operations",
       technologies: ["Flutter", "SQLite"],
@@ -39,7 +39,7 @@ const Projects = () => {
     },
     {
       id: 4,
-      title: "The Coders Club",
+      title: "#2Code",
       subtitle: "Website",
       description: "Informative website showcasing the Coders Club community and activities",
       technologies: ["TypeScript", "React", "Tailwind CSS"],
