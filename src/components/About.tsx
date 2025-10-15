@@ -70,7 +70,7 @@ const About = () => {
               </h3>
               <p className="text-muted-foreground leading-relaxed text-sm sm:text-base text-center sm:text-left">
                 Passionate about creating innovative solutions and exploring the endless possibilities of technology.
-                Member of the Coders Club, constantly learning and building.
+                Member of the #2Code, constantly learning and building.
               </p>
             </Card>
           </motion.div>
@@ -131,9 +131,9 @@ const About = () => {
               </div>
             </Card>
 
-            {/* Coders Club */}
+            {/* #2Code */}
             <a
-              href="https://thecodersclub.netlify.app/"
+              href="https://hash2code.netlify.app/"
               target="_blank"
               rel="noopener noreferrer"
               className="block"
